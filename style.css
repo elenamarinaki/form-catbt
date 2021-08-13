@@ -55,6 +55,20 @@ input {
   border-radius: 10px;
   box-shadow: 0px 3px 3px 0px rgba(27, 102, 231, 0.5);
 }
+input:focus {
+  outline: 2px solid rgba(27, 102, 231, 0.5);
+}
+/* ------------------------ WARNINGS */
+.highlight {
+  background-color: rgba(230, 54, 66, 0.1);
+  border: 1px solid rgba(230, 54, 66, 0.9);
+  box-shadow: 0px 3px 2px 1px rgba(230, 54, 66, 0.7);
+
+  transition: all 0.3s;
+}
+.highlight:focus {
+  outline: 2px solid rgba(230, 54, 66, 0.5);
+}
 
 /* ------------------------ FOOTER */
 #github {
