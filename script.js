@@ -1,7 +1,7 @@
 const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const date = document.querySelector('#date');
-const phone = document.querySelector('phone');
+const phone = document.querySelector('#phone');
 const warnings = document.querySelectorAll('.warning');
 const submitData = document.querySelectorAll('#submit-data');
 

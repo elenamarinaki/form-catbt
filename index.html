@@ -14,11 +14,18 @@
   <body>
     <header>
       <div class="center width-smd row" id="change-all-bad">
-        <img src="" alt="" />
         <h1>CHANGE ALL THE BAD THINGS</h1>
+        <img src="images/idea.svg" alt="plant power" id="plant-power" />
       </div>
     </header>
     <main class="center width-smd stack-lg">
+      <section>
+        <div id="sub-header">
+          Please provide your details below, so we can contact you about our
+          upcoming campaign!
+        </div>
+      </section>
+      <!-- --------------------------------- FORM -->
       <section>
         <form class="stack-md" id="form-data">
           <!-- --------------------- name -->
@@ -45,7 +52,13 @@
               <label for="date">Date of birth:</label>
               <p class="warning hide">you must be at least 12 years of age</p>
             </div>
-            <input type="date" id="date" name="date" min="1920-01-01" max="2008-12-31">
+            <input
+              type="date"
+              id="date"
+              name="date"
+              min="1920-01-01"
+              max="2008-12-31"
+            />
           </div>
 
           <!-- --------------------- telephone number -->
@@ -54,7 +67,13 @@
               <label for="phone">Telephone number:</label>
               <p class="warning hide">only UK number</p>
             </div>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{5}-[0-9]{6}" required>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{5}-[0-9]{6}"
+              required
+            />
           </div>
 
           <div>
@@ -63,5 +82,14 @@
         </form>
       </section>
     </main>
+
+    <footer class="center width-smd">
+      <div class="row" id="credits">
+        by @elenamarinaki
+        <a href="https://github.com/elenamarinaki" target="_blank"
+          ><img src="images/github.svg" alt="github logo" id="github"
+        /></a>
+      </div>
+    </footer>
   </body>
 </html>
