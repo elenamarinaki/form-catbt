@@ -1,3 +1,30 @@
+// Your web app's Firebase configuration
+
+var firebaseConfig = {
+  apiKey: 'AIzaSyAZuVZQeW8n06BlcVv20PKVLuY_IURz2-c',
+
+  authDomain: 'form-data-2.firebaseapp.com',
+
+  databaseURL:
+    'https://form-data-2-default-rtdb.europe-west1.firebasedatabase.app',
+
+  projectId: 'form-data-2',
+
+  storageBucket: 'form-data-2.appspot.com',
+
+  messagingSenderId: '453118195250',
+
+  appId: '1:453118195250:web:1ab98d85329e998455ee2b',
+};
+
+// Initialize Firebase
+
+firebase.initializeApp(firebaseConfig);
+
+// ----------------- reference contactInfo collections
+let contactInfo = firebase.database().ref('user-data');
+
+// ----------------- retrieving info from the form
 const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const date = document.querySelector('#date');
@@ -5,6 +32,7 @@ const phone = document.querySelector('#phone');
 const warnings = document.querySelectorAll('.warning');
 const submitData = document.querySelector('#submit-data');
 const resetBtn = document.querySelector('#reset');
+const submitMsg = document.querySelector('#submit-msg');
 
 function init() {
   name.value = '';
@@ -58,7 +86,9 @@ function validatePhone() {
 }
 
 // ------------------------- SUBMIT FORM
-function submitForm() {
+function submitForm(e) {
+  e.preventDefault();
+
   if (
     name.value === '' ||
     email.value === '' ||
@@ -68,7 +98,22 @@ function submitForm() {
     warnings[4].classList.remove('hide');
   } else {
     warnings[4].classList.add('hide');
+
+    saveToDatabase(name.value, email.value, date.value, phone.value);
+
+    submitMsg.classList.remove('hide');
   }
+}
+
+function saveToDatabase(name, email, date, phone) {
+  let newContactInfo = contactInfo.push();
+
+  newContactInfo.set({
+    name: name,
+    email: email,
+    date: date,
+    phone: phone,
+  });
 }
 
 window.addEventListener('load', init);
