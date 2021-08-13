@@ -13,14 +13,14 @@
   </head>
   <body>
     <header>
-      <div class="center width-sm row" id="change-all-bad">
+      <div class="center width-smd row" id="change-all-bad">
         <img src="" alt="" />
-        <h1>Change All The Bad Things</h1>
+        <h1>CHANGE ALL THE BAD THINGS</h1>
       </div>
     </header>
-    <main class="center width-sm stack-lg">
+    <main class="center width-smd stack-lg">
       <section>
-        <form class="stack-md">
+        <form class="stack-md" id="form-data">
           <!-- --------------------- name -->
           <div>
             <div class="row">
@@ -33,7 +33,7 @@
           <!-- --------------------- email -->
           <div>
             <div class="row">
-              <label for="name">E-mail address:</label>
+              <label for="email">E-mail address:</label>
               <p class="warning hide">enter a valid email address</p>
             </div>
             <input type="email" id="email" size="30" required />
@@ -41,7 +41,7 @@
 
           <!-- --------------------- date of birth -->
           <div>
-            <div>
+            <div class="row">
               <label for="date">Date of birth:</label>
               <p class="warning hide">you must be at least 12 years of age</p>
             </div>
@@ -50,11 +50,15 @@
 
           <!-- --------------------- telephone number -->
           <div>
-            <div>
+            <div class="row">
               <label for="phone">Telephone number:</label>
               <p class="warning hide">only UK number</p>
             </div>
             <input type="tel" id="phone" name="phone" pattern="[0-9]{5}-[0-9]{6}" required>
+          </div>
+
+          <div>
+            <button type="button" id="submit-data">Submit form</button>
           </div>
         </form>
       </section>
