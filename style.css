@@ -37,7 +37,7 @@ h1 {
   margin-left: 1rem;
 }
 
-/* ------------------------ FORM */
+/* ------------------------ FORM DATA*/
 #form-data {
   padding: 2rem;
   border: 2px solid #1c1c1c;
@@ -45,6 +45,41 @@ h1 {
   border-radius: 20px;
 
   box-shadow: 0px 4px 3px 0px rgba(32, 113, 234, 0.7);
+}
+
+/* ------------------------ BUTTONS */
+#controls {
+  margin-top: 2rem;
+}
+#submit-data {
+  background-color: rgba(19, 199, 19, 0.1);
+  font-family: 'Inconsolata', monospace;
+
+  padding: 0.5rem;
+  border: 1px solid #1c1c1c;
+  border-bottom: 2px solid #1b1b1b;
+  border-radius: 10px;
+
+  box-shadow: 0px 4px 3px 0px rgba(19, 199, 19, 0.7);
+  transition: all 0.5s;
+}
+
+#reset {
+  background-color: rgba(211, 23, 42, 0.1);
+  font-family: 'Inconsolata', monospace;
+
+  padding: 0.5rem;
+  border: 1px solid #1c1c1c;
+  border-bottom: 2px solid #1b1b1b;
+  border-radius: 10px;
+
+  box-shadow: 0px 4px 3px 0px rgba(211, 23, 42, 0.7);
+  transition: all 0.5s;
+}
+#submit-data:hover,
+#reset:hover {
+  transform: translateY(-2%);
+  cursor: pointer;
 }
 
 input {
@@ -59,6 +94,10 @@ input:focus {
   outline: 2px solid rgba(27, 102, 231, 0.5);
 }
 /* ------------------------ WARNINGS */
+.warning {
+  font-size: 14px;
+  color: rgba(211, 23, 42, 0.9);
+}
 .highlight {
   background-color: rgba(230, 54, 66, 0.1);
   border: 1px solid rgba(230, 54, 66, 0.9);

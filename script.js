@@ -4,12 +4,18 @@ const date = document.querySelector('#date');
 const phone = document.querySelector('#phone');
 const warnings = document.querySelectorAll('.warning');
 const submitData = document.querySelector('#submit-data');
+const resetBtn = document.querySelector('#reset');
 
 function init() {
   name.value = '';
   email.value = '';
   date.value = 'dd/mm/yyyy';
   phone.value = '';
+
+  name.classList.remove('highlight');
+  email.classList.remove('highlight');
+  date.classList.remove('highlight');
+  phone.classList.remove('highlight');
 
   warnings.forEach((x) => x.classList.add('hide'));
 }
@@ -70,3 +76,4 @@ name.addEventListener('input', validateName);
 email.addEventListener('input', validateEmail);
 phone.addEventListener('input', validatePhone);
 submitData.addEventListener('click', submitForm);
+resetBtn.addEventListener('click', init);
