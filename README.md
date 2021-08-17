@@ -2,7 +2,7 @@
 
 ## Change All The Bad Things
 
-### Base Functionality 
+### Base Functionality :page_with_curl:
 
 - The form collects name, email address, date of birth and telephone number.
 - All input fields need to be validated before submitting.
