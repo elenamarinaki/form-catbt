@@ -74,7 +74,9 @@ function validateEmail() {
 }
 
 function validatePhone() {
-  const rePhone = /^((\(\+44\))|0)[0-9]{10}/;
+  // const rePhone = /^((\(\+44\))|0)[0-9]{10}/;
+  const rePhone =
+    /^(\(?(?:0(?:0|11)\)?[\s-]?\(?|\+)(44)\)?[\s-]?)?\(?0?(?:\)[\s-]?)?([1-9]\d{1,4}\)?[\d\s-]+)((?:x|ext\.?|\#)\d{3,4})?$/;
 
   if (!rePhone.test(phone.value)) {
     phone.classList.add('highlight');
