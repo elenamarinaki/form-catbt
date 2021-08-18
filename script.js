@@ -30,6 +30,7 @@ const email = document.querySelector('#email');
 const date = document.querySelector('#date');
 const phone = document.querySelector('#phone');
 const warnings = document.querySelectorAll('.warning');
+const warningsSubmit = document.querySelectorAll('.warningSubmit');
 const submitData = document.querySelector('#submit-data');
 const resetBtn = document.querySelector('#reset');
 const submitMsg = document.querySelector('#submit-msg');
@@ -49,6 +50,7 @@ function init() {
   phone.classList.remove('highlight');
 
   warnings.forEach((x) => x.classList.add('hide'));
+  validationFlag = true;
 }
 
 // ------------------------- NAME VALIDATION
@@ -92,6 +94,7 @@ function validatePhone() {
 
 // ------------------------- VALIDATE COMPLETE FORM
 function allFieldsValid() {
+  validationFlag = true;
   warnings.forEach((warning) => {
     if (!warning.classList.contains('hide')) validationFlag = false;
   });
@@ -111,16 +114,16 @@ function submitForm(e) {
     date.value === 'dd/mm/yyyy' ||
     phone.value === ''
   ) {
-    warnings[4].classList.remove('hide');
+    warningsSubmit[0].classList.remove('hide');
   } else if (!validationFlag) {
-    warnings[5].classList.remove('hide');
+    warningsSubmit[1].classList.remove('hide');
   } else {
-    warnings[4].classList.add('hide');
-    warnings[5].classList.add('hide');
+    warningsSubmit.forEach((x) => x.classList.add('hide'));
 
     saveToDatabase(name.value, email.value, date.value, phone.value);
 
     submitMsg.classList.remove('hide');
+    init();
   }
 }
 

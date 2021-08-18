@@ -94,7 +94,8 @@ input:focus {
 }
 
 /* ------------------------ WARNINGS */
-.warning {
+.warning,
+.warningSubmit {
   font-size: 15px;
   color: rgba(211, 23, 42, 0.9);
 }
