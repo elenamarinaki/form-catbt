@@ -34,6 +34,9 @@ const submitData = document.querySelector('#submit-data');
 const resetBtn = document.querySelector('#reset');
 const submitMsg = document.querySelector('#submit-msg');
 
+// this variable is going to ensure all fields have valid inputs before we submit the form
+let validationFlag = true;
+
 function init() {
   name.value = '';
   email.value = '';
@@ -87,9 +90,20 @@ function validatePhone() {
   }
 }
 
+// ------------------------- VALIDATE COMPLETE FORM
+function allFieldsValid() {
+  warnings.forEach((warning) => {
+    if (!warning.classList.contains('hide')) validationFlag = false;
+  });
+  return validationFlag;
+}
+
 // ------------------------- SUBMIT FORM
 function submitForm(e) {
   e.preventDefault();
+
+  // checking if all fields contain valid inputs
+  allFieldsValid();
 
   if (
     name.value === '' ||
@@ -98,8 +112,11 @@ function submitForm(e) {
     phone.value === ''
   ) {
     warnings[4].classList.remove('hide');
+  } else if (!validationFlag) {
+    warnings[5].classList.remove('hide');
   } else {
     warnings[4].classList.add('hide');
+    warnings[5].classList.add('hide');
 
     saveToDatabase(name.value, email.value, date.value, phone.value);
 
