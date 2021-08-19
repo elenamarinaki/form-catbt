@@ -19,7 +19,7 @@
         <img src="images/idea.svg" alt="plant power" id="plant-power" />
       </div>
     </header>
-    <main class="center width-smd stack-lg">
+    <main class="center width-smd stack-md">
       <section>
         <div id="sub-header">
           Please provide your details below, so we can contact you about our
@@ -28,7 +28,7 @@
       </section>
       <!-- --------------------------------- FORM -->
       <section>
-        <form class="stack-md" id="form-data">
+        <form class="stack-mmd" id="form-data">
           <!-- --------------------- name -->
           <div>
             <div class="row">
@@ -77,8 +77,35 @@
             />
           </div>
 
+          <!-- --------------------- EMAIL or TELEPHONE?? -->
+          <div id="radio-options">
+            <p>I wish to be contacted by:</p>
+            <div>
+              <input
+                type="radio"
+                name="contact-option"
+                id="email-option"
+                value="Email"
+              />
+              <label for="email-option">Email</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="contact-option"
+                id="phone-option"
+                value="Telephone"
+              />
+              <label for="phone-option">Telephone</label>
+            </div>
+          </div>
+
+          <!-- --------------------- POSSIBLE WARNINGS AFTER SUBMIT -->
+
           <p class="warningSubmit hide">Please complete all fields</p>
           <p class="warningSubmit hide">Please correct any invalid data</p>
+
+          <!-- --------------------- BUTTONS -->
 
           <div class="row justify-space-between" id="controls">
             <button type="button" id="submit-data">Submit form</button>

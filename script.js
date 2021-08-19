@@ -50,6 +50,8 @@ function init() {
   phone.classList.remove('highlight');
 
   warnings.forEach((x) => x.classList.add('hide'));
+  warningsSubmit.forEach((y) => y.classList.add('hide'));
+
   validationFlag = true;
 }
 

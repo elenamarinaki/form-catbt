@@ -58,6 +58,27 @@ input {
 input:focus {
   outline: 2px solid rgba(27, 102, 231, 0.5);
 }
+
+/* #radio-options {
+  margin-top: 2rem;
+} */
+#radio-options p {
+  margin-bottom: 0.7rem;
+}
+
+input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #1c1c1c;
+  color: #1b1b1b;
+}
+input[type='radio']:checked {
+  outline: none;
+  background-color: rgba(27, 102, 231, 0.7);
+}
+input[type='radio']:hover {
+  cursor: pointer;
+}
 /* ------------------------ BUTTONS */
 #controls {
   margin-top: 2rem;
@@ -154,6 +175,10 @@ input:focus {
 
 .stack-md > * + * {
   margin-top: 1rem;
+}
+
+.stack-mmd > * + * {
+  margin-top: 1.5rem;
 }
 
 .stack-lg > * + * {
