@@ -13,6 +13,7 @@ font-family: 'Raleway', sans-serif; */
 }
 body {
   font-family: 'Inconsolata', monospace;
+  background-color: rgba(127, 166, 240, 0.2);
 }
 a {
   text-decoration: none;
@@ -39,6 +40,7 @@ h1 {
 
 /* ------------------------ FORM DATA*/
 #form-data {
+  background-color: #fff;
   padding: 2rem;
   border: 2px solid #1c1c1c;
   border-bottom: 3px solid #1b1b1b;

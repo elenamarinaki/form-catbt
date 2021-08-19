@@ -2,18 +2,12 @@
 
 var firebaseConfig = {
   apiKey: 'AIzaSyAZuVZQeW8n06BlcVv20PKVLuY_IURz2-c',
-
   authDomain: 'form-data-2.firebaseapp.com',
-
   databaseURL:
     'https://form-data-2-default-rtdb.europe-west1.firebasedatabase.app',
-
   projectId: 'form-data-2',
-
   storageBucket: 'form-data-2.appspot.com',
-
   messagingSenderId: '453118195250',
-
   appId: '1:453118195250:web:1ab98d85329e998455ee2b',
 };
 
@@ -29,6 +23,7 @@ const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const date = document.querySelector('#date');
 const phone = document.querySelector('#phone');
+const radioBtn = document.querySelectorAll('input[name="contact-option"]');
 const warnings = document.querySelectorAll('.warning');
 const warningsSubmit = document.querySelectorAll('.warningSubmit');
 const submitData = document.querySelector('#submit-data');
@@ -43,6 +38,7 @@ function init() {
   email.value = '';
   date.value = 'dd/mm/yyyy';
   phone.value = '';
+  radioBtn.forEach((rBtn) => (rBtn.checked = false));
 
   name.classList.remove('highlight');
   email.classList.remove('highlight');
@@ -100,6 +96,9 @@ function allFieldsValid() {
   warnings.forEach((warning) => {
     if (!warning.classList.contains('hide')) validationFlag = false;
   });
+  // if (radioBtn[0].checked === false && radioBtn[1].checked === false)
+  //   validationFlag = false;
+
   return validationFlag;
 }
 
@@ -114,7 +113,8 @@ function submitForm(e) {
     name.value === '' ||
     email.value === '' ||
     date.value === 'dd/mm/yyyy' ||
-    phone.value === ''
+    phone.value === '' ||
+    (radioBtn[0].checked === false && radioBtn[1].checked === false)
   ) {
     warningsSubmit[0].classList.remove('hide');
   } else if (!validationFlag) {
@@ -122,14 +122,26 @@ function submitForm(e) {
   } else {
     warningsSubmit.forEach((x) => x.classList.add('hide'));
 
-    saveToDatabase(name.value, email.value, date.value, phone.value);
+    // check radio options
+    let contactType = '';
+    if (radioBtn[0].checked) contactType = 'email';
+    else contactType = 'telephone';
+
+    // saving to firebase
+    saveToDatabase(
+      name.value,
+      email.value,
+      date.value,
+      phone.value,
+      contactType
+    );
 
     submitMsg.classList.remove('hide');
     init();
   }
 }
 
-function saveToDatabase(name, email, date, phone) {
+function saveToDatabase(name, email, date, phone, contact) {
   let newContactInfo = contactInfo.push();
 
   newContactInfo.set({
@@ -137,6 +149,7 @@ function saveToDatabase(name, email, date, phone) {
     email: email,
     date: date,
     phone: phone,
+    contactType: contact,
   });
 }
 
