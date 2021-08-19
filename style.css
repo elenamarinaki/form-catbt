@@ -133,6 +133,28 @@ input[type='radio']:hover {
   outline: 2px solid rgba(230, 54, 66, 0.5);
 }
 
+/* ------------------------ MODAL */
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+
+  /* background-color: rgb(0, 0, 0); */
+}
+.modal-content {
+  background-color: rgba(32, 113, 234, 0.7);
+  margin: 15% auto;
+  padding: 20px;
+  width: 100%;
+
+  border: 1px solid #1c1c1c;
+  border-bottom: 2px solid #1b1b1b;
+  border-radius: 10px;
+
+  box-shadow: 0px 3px 3px 0px rgba(27, 102, 231, 0.5);
+}
 /* ------------------------ FOOTER */
 #github {
   width: 20px;
