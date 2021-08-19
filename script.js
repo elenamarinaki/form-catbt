@@ -29,7 +29,7 @@ const warningsSubmit = document.querySelectorAll('.warningSubmit');
 const submitData = document.querySelector('#submit-data');
 const resetBtn = document.querySelector('#reset');
 const submitMsg = document.querySelector('#submit-msg');
-const modal = document.querySelector('#modal');
+const modal = document.querySelector('.modal');
 
 // this variable is going to ensure all fields have valid inputs before we submit the form
 let validationFlag = true;
@@ -137,7 +137,7 @@ function submitForm(e) {
       contactType
     );
 
-    modal.style.display = 'block';
+    modal.classList.add('show-modal');
     // submitMsg.classList.remove('hide');
     init();
   }
@@ -156,13 +156,14 @@ function saveToDatabase(name, email, date, phone, contact) {
 }
 
 // close modal
-window.onclick = function (e) {
-  if (e.target == modal) {
-    modal.style.display = none;
+function windowOnClick(event) {
+  if (event.target === modal) {
+    modal.classList.remove('show-modal');
   }
-};
+}
 
 window.addEventListener('load', init);
+window.addEventListener('click', windowOnClick);
 name.addEventListener('input', validateName);
 email.addEventListener('input', validateEmail);
 phone.addEventListener('input', validatePhone);
