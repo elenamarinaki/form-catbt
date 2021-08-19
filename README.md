@@ -15,8 +15,8 @@
 ### Recent Updates 🪄
 
 - The form gives the option to the user to choose how they wish to be contacted, email or telephone. 💻 📞
-- Telephone number validation has been improved, and only UK numbers are accepted.
-- After successful submission, all input fields are cleared and a modal appears on page. The user can close the modal by clicking anywhere on the background faded are and return to the form. ✅
+- Telephone number `validation` has been improved, and only UK numbers are accepted.
+- After successful submission, all input fields are cleared and a `modal` appears on page. The user can close the modal by clicking anywhere on the background faded are and return to the form. ✅
 
 ### Coming next ... :test_tube:
 
