@@ -164,8 +164,8 @@ function windowOnClick(event) {
 
 window.addEventListener('load', init);
 window.addEventListener('click', windowOnClick);
-name.addEventListener('input', validateName);
-email.addEventListener('input', validateEmail);
-phone.addEventListener('input', validatePhone);
+name.addEventListener('focusout', validateName);
+email.addEventListener('focusout', validateEmail);
+phone.addEventListener('focusout', validatePhone);
 submitData.addEventListener('click', submitForm);
 resetBtn.addEventListener('click', init);
