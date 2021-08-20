@@ -87,7 +87,7 @@ input[type='radio']:hover {
   margin-top: 2rem;
 }
 #submit-data {
-  background-color: rgba(19, 199, 19, 0.1);
+  background-color: rgba(19, 199, 34, 0.1);
   font-family: 'Inconsolata', monospace;
 
   font-weight: 600;
@@ -96,7 +96,7 @@ input[type='radio']:hover {
   border-bottom: 2px solid #1b1b1b;
   border-radius: 10px;
 
-  box-shadow: 0px 4px 3px 0px rgba(19, 199, 19, 0.7);
+  box-shadow: 0px 4px 3px 0px rgba(14, 201, 67, 0.7);
   transition: all 0.5s;
 }
 
@@ -115,7 +115,7 @@ input[type='radio']:hover {
 }
 #submit-data:hover,
 #reset:hover {
-  transform: translateY(-2%);
+  transform: translateY(-3%);
   cursor: pointer;
 }
 
