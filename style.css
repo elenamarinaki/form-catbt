@@ -59,6 +59,7 @@ input {
 }
 input:focus {
   outline: 2px solid rgba(27, 102, 231, 0.5);
+  /* -moz-outline-radius: 10px; */
 }
 
 /* #radio-options {
